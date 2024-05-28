@@ -1,0 +1,237 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.bg-decec {
+    background-color: #000;
+}
+
+/*untuk header section*/
+.header {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: white;
+}
+.header > h1{
+    font-family: 'Montserrat', sans-serif;    
+}
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0; 
+}
+#tbhbuku {
+    font-size: 20px;
+    color: black;
+    transition: 0.5s;
+    background: #fff;
+    border-radius: 10px;
+    box-sizing: border-box !important;
+    padding: 8px 16px;
+    border: 3px solid black;
+    margin-bottom: 10px; 
+}
+#searchSubmit:hover {
+    background: cornflowerblue;
+    color: white;
+}
+#tbhbuku:hover{
+  background: cornflowerblue;
+}
+
+/*untuk search section*/
+#cari {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start; 
+    padding: 16px;
+    border-radius: 10px;
+}
+.cari > form {
+    padding: 16px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr 0.5fr;
+    grid-gap: 10px;
+}
+.search-container {
+    position: relative;
+}
+.search-container input[type="text"] {
+    padding-left: 30px;   
+    border-radius: 50px;
+    margin-right: 50px;
+}
+.search-container input{
+    padding: 5px;
+    border-radius: 5px;
+}
+.search-container i {
+    position: absolute;
+    left: 10px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    color: #888; 
+}
+
+/*---untuk status bacaan (sudah dibaca/belum)---*/
+.status {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 60px; 
+}
+.Blm_Dibaca {
+    flex-basis: 48%;
+    padding: 16px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    margin: 16px 0; 
+    box-sizing: border-box;
+    background-color: #6D99D6;
+}
+.Sdh_Dibaca {
+    flex-basis: 48%;
+    padding: 16px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    margin: 16px 0; 
+    box-sizing: border-box; 
+    background-color: #F9C12B;
+}
+.Sdh_Dibaca h4,.Blm_Dibaca h4 {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+/*---untuk form tambah buku---*/
+#inputbuku {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background-color: #96BAFF;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    display: none;
+    transition: 1s all !important;
+    transition-property: color !important;
+    justify-content: center;
+    align-items: center;
+}
+.inputbuku-open {
+    transition: 1s all !important;
+    transition-property: color !important;
+    display: flex !important;
+    border: 1px solid b;
+}
+#form input {
+    width: 90% !important;
+    margin: 12px 0 !important;
+    background: transparent !important;
+    padding: 5px;
+}
+#form .close {
+    border: none;
+    outline: none;
+    color: #fff;
+    background: red;
+    padding: 12px !important;
+    border-radius: 5px 0 0 5px;
+    height: 41px !important;
+    text-decoration: none;
+}
+#form .save {
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #F9C12B;
+    padding: 12px !important;
+    border-radius: 5px 0 0 5px;
+    height: 41px !important;
+    text-decoration: none;
+}
+
+/*---tombol sudah baca, belum baca, hapus---*/
+.Sdh_Dibaca-button,.Blm_Dibaca-button,.trash-book {
+    position: relative;
+    padding: 10px;
+    background: #000;
+    border-radius: 50%;
+    transition: .5s ease-out;
+    border: none;
+    outline: none;
+    width: 40px; 
+    height: 40px; 
+    margin: 10px 0;
+    box-sizing: border-box;
+    color: #fff;
+    opacity: .9;
+    text-align: center;  
+    cursor: pointer; 
+}
+.Sdh_Dibaca-button:before,.Blm_Dibaca-button:before,.trash-book:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: ""; 
+    background-size: cover;
+    width: 16px; 
+    height: 16px;
+    display: inline-block;
+}
+.Blm_Dibaca-button:hover{
+    background: #6D99D6;
+    color: #fff;
+}
+.Sdh_Dibaca-button:hover{
+    background: #F9C12B;
+}
+.trash-book:hover {
+    background: red;
+}
+.Blm_Dibaca-button::before{
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAATBJREFUSEvtlLsuRUEYhb/VSkRDkChEJDyDuCRoxWuIVuJNRKOSeAHxBIgK0bpETckLLPuXKTbnnJlxkh3NmXKy91r/+mbNiI6XOtZnZFAk/L+IbB8Cp5Le+o1qewlYk3QyKMrABLb3gSPgGVj/bWJ7EbgCZoBdSef9THIG8WMIhNBLmvQ7ie0F4AaYBh6ADUmffzJIQj0mwFiteGgUD9n2LHCZkjwCEwnLXZNwS9JHrkpFg5RkLuGaT2JZLG3DWoNgHcyDfaz7JtVmafpaRCF+nRA9JUSxd9vsb5dMsglstyd/BVaA8VY9i0lyNe0Rl/SeziSqG8imSrhyBntNz4+BwBI9/3GbbS+nJJPAjqSLYe7BAXCWeSrCZHWop6L4TFZ+UFXTSq2+n40MivQ6R/QFgd1qGe7ts/oAAAAASUVORK5CYII=");
+}
+.Sdh_Dibaca-button:before {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAPxJREFUSEvtk0tKA1EQRc8FswYVhYiuQiTRdbiBQBbgNhw5ceZS/OEmEjSQgFnFDRVaaB4++3Viz7pm3YN7qs6rEh2XOs6nBzQa7hVtFdk+BG4l3afO9lZk+xh4BS6AiaTHOmQvgO0T4AU4B2bASNL3vwCq8HdgmAsP0E4TJOFfwGXa+c8UWYDtO+BJ0ro+cqJlDtxIWuYO4leA7SnwAETAtaRVtS2nwFul5RMY/xWeVWT7CPgAzoAFcAUcAM9VeGiJB812XqIouo3A2JDodgDEv6LOGwE1JbHjMUlUcedFgAQSn0VaWt+B7ZjAkuI9WtVOd9CG0AMabXWuaAOgI1EZUcrQDgAAAABJRU5ErkJggg==");
+}
+.trash-book:before {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAALFJREFUSEvtlVEKAjEMRGfuIgjudTyOn4KX8ToueJosFQt1t83U1uLP7l9JkzeT0A0x+OPg+nABZnYGcAVwLAh5AriQvJeEKsADwEm4nElOrQALiSSzQszMjb9yPXWqgIpvADGhd/Cp4w8HwwFReY311KV3v3l4PwWsFapzCq9yoAp2t2gHbN7Vty3ZZyB/Td0tUoQWQM2iWXOzi6f0ksOqvAE4KPXveHF1/nfpV6p3ry3epM4ZCBVpxgAAAABJRU5ErkJggg==");
+    
+}
+.detail-book {
+    border-top: 1px solid #000;
+    padding: 10px;
+}
+
+
+  
+@media screen and (max-width: 576px) {
+    .content,.statusbuku {
+      flex-direction: column;
+    }
+    .col-1,.col-2,.Blm_Dibaca, .Sdh_Dibaca {
+      box-sizing: border-box !important;
+      width: 100% !important;
+    }
+  
+}
+@media screen and (max-width: 768px) {
+    .content,.statusbuku {
+      flex-direction: column;
+    }
+    .col-1,.col-2,.Blm_Dibaca, .Sdh_Dibaca {
+      box-sizing: border-box !important;
+      width: 100% !important;
+    }
+}
